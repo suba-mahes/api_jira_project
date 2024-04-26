@@ -2,4 +2,4 @@
 
 express file-name
 
-npm instal axios
+npm instal axios jira-client
