@@ -1,5 +1,5 @@
 const axios = require("axios");
-
+const jira_API = require("jira-client")
 var display = require("./result_display");
 const create_html_middleware = require("../middlewares/creating_html");
 const jira_api_middleware = require("../middlewares/issue_display");
@@ -47,9 +47,9 @@ exports.welcome_using_JIRA_client = async (req, res) => {
       : [req.query.id];
     //const issue_ids = ["MSP-1","PROJ-1"];
 
-    const jira = new JiraApi({
+    const jira = new jira_API({
       protocol: "https",
-      host: jira_config.baseUrl,
+      host: jira_config.host,
       username: jira_config.username,
       password: jira_config.password,
       apiVersion: "2",
@@ -61,9 +61,10 @@ exports.welcome_using_JIRA_client = async (req, res) => {
         display.end_error_result(res, error);
 
       } else {
-        let html_data = await create_html_middleware.create_html(All_details);
+        console.log(data)
+        //let html_data = await create_html_middleware.create_html(data);
 
-    res.send(html_data);
+    //res.send(html_data);
       }
   });
     // for (const id of issue_ids) {

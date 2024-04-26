@@ -1,6 +1,7 @@
 {
     "username": "subamaheswari4@gmail.com",
-    "password": "ATATT3xFfGF0WP_K5jsjnACfhcwxPxbxg4C8_CrSaQXfmv5GnAh6Ed_qJEV8wmK84DKN0kakal4HcCktIMvFG0ERTxQp3fVdRK0PEBZVbQWGj-yOhZYHU_pOMaF7B13biOE8sTpefCEugK3r-L8F724GKz1omJeUjq567aNxZqkQpOmQRZaYvdI=CD1E397E",
+    "password": "ATATT3xFfGF0FfXPn1GzxyK-IBXynF8QCBnss_8IoWAxtVWYUZyGhhGOq7WcLIf0G5hCfHh2TPt1lyDSUREFAVuSa9ny5T1PFfFBSDSPMPgitR7Oc0JXSasJyfY3eFilTSa2Smn03Obi3_SuMxiZ0YJG2YFHu1Kwg6DAciWeO5qHB4rOtqgjSHg=2F5DD7ED",
     "apiUrl" : "https://subamaheswari.atlassian.net/rest/api/2/issue/",
-    "baseUrl" : "https://subamaheswari.atlassian.net/"
+    "baseUrl" : "https://subamaheswari.atlassian.net/",
+    "host" : "subamaheswari.atlassian.net"
 }
