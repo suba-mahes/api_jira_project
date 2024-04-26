@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var jiraApiRouter = require('./routes/jira_API');
+var jiraApiRouter = require('./routes/issue_display');
 
 var app = express();
 
