@@ -1,7 +1,7 @@
 const jira_API = require("jira-client");
 var display = require("./result_display");
-const create_html_middleware = require("../services/creating_html
-const middleware = require("../services/issue_display
+const create_html_service = require("../services/creating_html");
+const jira_service = require("../services/issue_display");
 const jira_config = require("../config/jira.json");
 
 exports.using_JIRA_CLIENT_searchJira = async (req, res) => {
@@ -25,12 +25,12 @@ exports.using_JIRA_CLIENT_searchJira = async (req, res) => {
     //   strictSSL: true,
     // });
 
-    const jira = await middleware.jira_client();
+    const jira = await jira_service.jira_client();
 
     const jql = `key in (${issue_ids.join(",")})`;
     const response = await jira.searchJira(jql);
 
-    let html_data = await create_html_middleware.create_html(response.issues);
+    let html_data = await create_html_service.create_html(response.issues);
 
     res.send(html_data);
   } catch (err) {
@@ -59,7 +59,7 @@ exports.using_JIRA_CLIENT_findIssue = async (req, res) => {
     //   strictSSL: true,
     // });
 
-    const jira = await middleware.jira_client();
+    const jira = await jira_service.jira_client();
 
     const All_details = [];
     for (const id of issue_ids) {
@@ -67,7 +67,7 @@ exports.using_JIRA_CLIENT_findIssue = async (req, res) => {
       All_details.push(response);
     }
 
-    let html_data = await create_html_middleware.create_html(All_details);
+    let html_data = await create_html_service.create_html(All_details);
 
     res.send(html_data);
   } catch (err) {
