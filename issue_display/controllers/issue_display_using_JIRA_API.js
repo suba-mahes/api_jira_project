@@ -1,7 +1,7 @@
 const axios = require("axios");
 var display = require("./result_display");
 const create_html_service = require("../services/creating_html");
-const jira_api_middleware = require("../services/issue_display");
+const jira_service = require("../services/issue_display");
 const jira_config = require("../config/jira.json");
 
 exports.using_JIRA_SEARCH_API = async (req, res) => {
@@ -15,7 +15,7 @@ exports.using_JIRA_SEARCH_API = async (req, res) => {
       : [req.query.id];
     //const issue_ids = ["MSP-1","PROJ-1"];
 
-    const response = await jira_api_middleware.jira_search_api(issue_ids);
+    const response = await jira_service.jira_search_api(issue_ids);
     let html_data = await create_html_service.create_html(response.issues);
 
     // const response = await axios.get(
@@ -55,7 +55,7 @@ exports.using_JIRA_ISSUE_API = async (req, res) => {
 
     const All_details = [];
     for (const id of issue_ids) {
-      All_details.push(await jira_api_middleware.jira_issue_api(id));
+      All_details.push(await jira_service.jira_issue_api(id));
       //   const response = await axios.get(
       //     jira_config.baseUrl + "/rest/api/2/issue/" + id,
       //     {
