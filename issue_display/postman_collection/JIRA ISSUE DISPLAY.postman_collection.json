@@ -7,7 +7,37 @@
 	},
 	"item": [
 		{
-			"name": "USING JIRA CLIENT",
+			"name": "USING JIRA CLIENT findissue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/issue-display/using-JIRA_CLIENT?id=MSP-1&id=PROJ-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"issue-display",
+						"using-JIRA_CLIENT"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "MSP-1"
+						},
+						{
+							"key": "id",
+							"value": "PROJ-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USING JIRA CLIENT searchjira",
 			"request": {
 				"method": "GET",
 				"header": [],

@@ -1,4 +1,4 @@
-var display = require("../controllers/result_display");
+const jira_API = require("jira-client");
 const jira_config = require("../config/jira.json");
 
 exports.jira_issue_api = async(id) => {

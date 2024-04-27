@@ -41,7 +41,7 @@ exports.create_html = (data,res) => {
       for(let i = 0;i<data.length; i++){
       html_content += `<tr>
           <td>${i+1}</td>
-          <td><a href= ${jira_config.baseUrl}browse/${data[i].key} target="_blank">${data[i].key}</a></td>
+          <td><a href= ${jira_config.baseUrl}/browse/${data[i].key} target="_blank">${data[i].key}</a></td>
           <td>${data[i].fields.summary}</td>
           <td>${data[i].fields.description}</td>
           <td>${data[i].fields.status.name}</td>
