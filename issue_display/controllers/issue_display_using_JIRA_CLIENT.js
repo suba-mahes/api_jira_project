@@ -20,7 +20,7 @@ exports.using_JIRA_CLIENT_searchJira = async (req, res) => {
     //   protocol: "https",
     //   host: jira_config.host,
     //   username: jira_config.username,
-    //   password: jira_config.password,
+    //   password: process.env.JIRA_API_TOKEN,
     //   apiVersion: "2",
     //   strictSSL: true,
     // });
@@ -54,7 +54,7 @@ exports.using_JIRA_CLIENT_findIssue = async (req, res) => {
     //   protocol: "https",
     //   host: jira_config.host,
     //   username: jira_config.username,
-    //   password: jira_config.password,
+    //   password: process.env.JIRA_API_TOKEN,
     //   apiVersion: "2",
     //   strictSSL: true,
     // });
@@ -74,4 +74,3 @@ exports.using_JIRA_CLIENT_findIssue = async (req, res) => {
     display.end_error_result(res, err);
   }
 };
-

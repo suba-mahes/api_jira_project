@@ -23,7 +23,7 @@ exports.using_JIRA_SEARCH_API = async (req, res) => {
     //   {
     //     auth: {
     //       username: jira_config.username,
-    //       password: jira_config.password,
+    //       password: process.env.JIRA_API_TOKEN,
     //     },
     //     params: {
     //       jql: `key in (${issue_ids.join(",")})`,
@@ -61,7 +61,7 @@ exports.using_JIRA_ISSUE_API = async (req, res) => {
       //     {
       //       auth: {
       //         username: jira_config.username,
-      //         password: jira_config.password,
+      //         password: process.env.JIRA_API_TOKEN,
       //       },
       //     }
       //   );

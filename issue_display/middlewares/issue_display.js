@@ -8,7 +8,7 @@ exports.jira_client = async () => {
     protocol: "https",
     host: jira_config.host,
     username: jira_config.username,
-    password: jira_config.password,
+    password: process.env.JIRA_API_TOKEN,
     apiVersion: "2",
     strictSSL: true,
   });
@@ -21,7 +21,7 @@ exports.jira_issue_api = async (id) => {
     {
       auth: {
         username: jira_config.username,
-        password: jira_config.password,
+        password: process.env.JIRA_API_TOKEN,
       },
     }
   );
@@ -32,7 +32,7 @@ exports.jira_search_api = async (issue_ids) => {
   const response = await axios.get(jira_config.baseUrl + "/rest/api/2/search", {
     auth: {
       username: jira_config.username,
-      password: jira_config.password,
+      password: process.env.JIRA_API_TOKEN,
     },
     params: {
       jql: `key in (${issue_ids.join(",")})`,
