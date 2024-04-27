@@ -1,7 +1,7 @@
 const jira_config = require("../config/jira.json")
 var display = require("../controllers/result_display");
 
-exports.create_html = (data) => {
+exports.create_html = (data,res) => {
   try {
 
     let html_content = `<html>
@@ -38,15 +38,15 @@ exports.create_html = (data) => {
           <th>Status</th>
         </tr>`;
 
-    data.forEach((item) => {
+      for(let i = 0;i<data.length; i++){
       html_content += `<tr>
-          <td>1</td>
-          <td><a href= ${jira_config.baseUrl}browse/${item.key} target="_blank">${item.key}</a></td>
-          <td>${item.fields.summary}</td>
-          <td>${item.fields.description}</td>
-          <td>${item.fields.status.name}</td>
+          <td>${i+1}</td>
+          <td><a href= ${jira_config.baseUrl}browse/${data[i].key} target="_blank">${data[i].key}</a></td>
+          <td>${data[i].fields.summary}</td>
+          <td>${data[i].fields.description}</td>
+          <td>${data[i].fields.status.name}</td>
         </tr>`;
-    });
+    }
 
     html_content += `</table>
     </body>

@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "20b0c759-85bc-4f72-bbf5-a34c6c214602",
+		"name": "JIRA ISSUE DISPLAY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33285105"
+	},
+	"item": [
+		{
+			"name": "USING JIRA CLIENT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/issue-display/using-JIRA_CLIENT?id=MSP-1&id=PROJ-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"issue-display",
+						"using-JIRA_CLIENT"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "MSP-1"
+						},
+						{
+							"key": "id",
+							"value": "PROJ-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USING JIRA SEARCH API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/issue-display/using-JIRA_SEARCH_API?id=MSP-1&id=PROJ-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"issue-display",
+						"using-JIRA_SEARCH_API"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "MSP-1"
+						},
+						{
+							"key": "id",
+							"value": "PROJ-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USING JIRA ISSUE API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/issue-display/using-JIRA_ISSUE_API?id=MSP-1&id=PROJ-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"issue-display",
+						"using-JIRA_ISSUE_API"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "MSP-1"
+						},
+						{
+							"key": "id",
+							"value": "PROJ-1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
