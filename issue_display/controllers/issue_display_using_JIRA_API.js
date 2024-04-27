@@ -1,7 +1,7 @@
 const axios = require("axios");
 var display = require("./result_display");
-const create_html_middleware = require("../middlewares/creating_html");
-const jira_api_middleware = require("../middlewares/issue_display");
+const create_html_middleware = require("../services/creating_html
+const jira_api_middleware = require("../services/issue_display
 const jira_config = require("../config/jira.json");
 
 exports.using_JIRA_SEARCH_API = async (req, res) => {
