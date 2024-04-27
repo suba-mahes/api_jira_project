@@ -16,14 +16,16 @@ exports.using_JIRA_CLIENT_searchJira = async (req, res) => {
       : [req.query.id];
     //const issue_ids = ["PROJ-1"];
 
-    const jira = new jira_API({
-      protocol: "https",
-      host: jira_config.host,
-      username: jira_config.username,
-      password: jira_config.password,
-      apiVersion: "2",
-      strictSSL: true,
-    });
+    // const jira = new jira_API({
+    //   protocol: "https",
+    //   host: jira_config.host,
+    //   username: jira_config.username,
+    //   password: jira_config.password,
+    //   apiVersion: "2",
+    //   strictSSL: true,
+    // });
+
+    const jira = await middleware.jira_client();
 
     const jql = `key in (${issue_ids.join(",")})`;
     const response = await jira.searchJira(jql);
@@ -48,14 +50,16 @@ exports.using_JIRA_CLIENT_findIssue = async (req, res) => {
       : [req.query.id];
     //const ids = ["PROJ-1"];
 
-    const jira = new jira_API({
-      protocol: "https",
-      host: jira_config.host,
-      username: jira_config.username,
-      password: jira_config.password,
-      apiVersion: "2",
-      strictSSL: true,
-    });
+    // const jira = new jira_API({
+    //   protocol: "https",
+    //   host: jira_config.host,
+    //   username: jira_config.username,
+    //   password: jira_config.password,
+    //   apiVersion: "2",
+    //   strictSSL: true,
+    // });
+
+    const jira = await middleware.jira_client();
 
     const All_details = [];
     for (const id of issue_ids) {
