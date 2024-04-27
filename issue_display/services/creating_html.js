@@ -1,9 +1,7 @@
 const jira_config = require("../config/jira.json")
 var display = require("../controllers/result_display");
 
-exports.create_html = (data,res) => {
-  try {
-
+exports.create_html = (data) => {
     let html_content = `<html>
       <head>
         <title>ISSUE_DETAILS</title>
@@ -53,7 +51,4 @@ exports.create_html = (data,res) => {
     </html>`;
 
     return html_content;
-  } catch (err) {
-    display.end_error_result(res, err);
-  }
 };
