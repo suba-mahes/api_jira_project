@@ -40,9 +40,14 @@ exports.create_html = (data) => {
       html_content += `<tr>
           <td>${i+1}</td>
           <td><a href= ${jira_config.baseUrl}/browse/${data[i].key} target="_blank">${data[i].key}</a></td>
-          <td>${data[i].fields.summary}</td>
-          <td>${data[i].fields.description}</td>
-          <td>${data[i].fields.status.name}</td>
+          <td>${data[i].fields.summary}</td>`;
+        if(!data[i].fields.description){
+            html_content += `<td></td>`;
+        }
+        else{
+            html_content += `<td>${data[i].fields.description}</td>`;
+        }
+          html_content += `<td>${data[i].fields.status.name}</td>
         </tr>`;
     }
 
